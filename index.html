@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+        background-color: #f5cfcf;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 3rem; /* Scaled down from the massive version */
+        color: #4a4a4a;
+        margin-bottom: 20px;
+    }
+
+    img {
+        max-height: 250px; /* Smaller, more controlled image size */
+        width: auto;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons button {
+        padding: 15px 40px; /* Much smaller buttons than before */
+        font-size: 1.5rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .yes-btn {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .yes-btn:hover {
+        transform: scale(1.1);
+        background-color: #45a049;
+    }
+
+    .no-btn {
+        background-color: #e74c3c;
+        color: white;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Will you be my Valentine?</h1>
+    <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3a2FuYWphbGV6Y2ZicThkYmo1and2OGFmMzB4c3lycHhsN2ZpbGZoeiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/6gb2T2w8ilrkgnjiyf/giphy.gif" alt="Cute Cat">
+    <div class="buttons">
+        <button class="yes-btn" onclick="window.location.href='re.html'">Yes</button>
+        <button class="no-btn" onmouseover="moveButton(this)">No</button>
+    </div>
+</div>
+
+<script>
+    function moveButton(button) {
+        // Calculate random position within the visible window
+        const padding = 50;
+        const x = Math.random() * (window.innerWidth - button.offsetWidth - padding);
+        const y = Math.random() * (window.innerHeight - button.offsetHeight - padding);
+        
+        button.style.position = 'fixed'; // Keeps it relative to the screen
+        button.style.left = x + 'px';
+        button.style.top = y + 'px';
+    }
+</script>
+
+</body>
+</html>
